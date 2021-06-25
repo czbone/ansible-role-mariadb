@@ -7,3 +7,9 @@ bertvv.mariadb(https://github.com/bertvv/ansible-role-mariadb)のv2.2.0を元に作成
 # 対応OS
 
 - CentOS7
+
+### 基本定義値
+
+| 定義名                       | デフォルト         | 意味                                                                                                      |
+| :---                           | :---            | :---                                                                                                          |
+| `mariadb_version`              | '10.5'          | MariaDBのバージョンを指定します。                               |
