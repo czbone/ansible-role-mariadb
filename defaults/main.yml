@@ -14,6 +14,10 @@ mariadb_swappiness: 0
 mariadb_character_set_server: utf8
 mariadb_collation_server: utf8_general_ci
 
+mariadb_logrotate:
+  configure: true
+  rotate: 3
+  
 # Network configuration (network.cnf)
 
 mariadb_service: mariadb
