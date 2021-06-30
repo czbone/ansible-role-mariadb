@@ -41,6 +41,7 @@ mariadb_sysdate_is_now: 1
 mariadb_logs_days: 10
 mariadb_expire_logs_days: 10
 mariadb_sync_binlog: 1
+mariadb_log_error: '/var/log/mysql/mariadb.log'
 
 # Query cache
 
