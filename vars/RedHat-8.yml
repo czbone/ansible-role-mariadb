@@ -2,7 +2,7 @@
 ---
 
 mariadb_packages:
-  - mariadb-common
+  - mariadb
   - mariadb-server
   - python3-PyMySQL
 
