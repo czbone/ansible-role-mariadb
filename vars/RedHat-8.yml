@@ -7,7 +7,7 @@ mariadb_packages:
 #  - mariadb
 #  - mariadb-server
   #- boost-program-options
-  - galera-4
+  #- galera-4
   - MariaDB-server
   #
   - MariaDB-client
