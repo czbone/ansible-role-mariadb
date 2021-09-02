@@ -4,8 +4,14 @@
 mariadb_packages:
 #  - MariaDB
 #  - MariaDB-server
-  - mariadb
-  - mariadb-server
+#  - mariadb
+#  - mariadb-server
+  - MariaDB-server
+  - galera-4
+  - MariaDB-client
+  - MariaDB-shared
+  - MariaDB-backup
+  - MariaDB-common
   - python3-PyMySQL
 
 mariadb_socket: /var/lib/mysql/mysql.sock
