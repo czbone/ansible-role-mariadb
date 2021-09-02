@@ -29,11 +29,10 @@
   when: ansible_os_family == 'Debian'
 
 - name: Install packages
-  #package:
-  dnf:
+  package:
     name: "{{ item }}"
     state: present
-    disablerepo: "appstream"
+    #disablerepo: "appstream"
   with_items: "{{ mariadb_packages }}"
   tags: mariadb
 
