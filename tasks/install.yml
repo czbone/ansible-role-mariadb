@@ -32,7 +32,7 @@
   package:
     name: "{{ item }}"
     state: present
-    disablerepo: "epel"
+    disablerepo: "appstream"
   with_items: "{{ mariadb_packages }}"
   tags: mariadb
 
