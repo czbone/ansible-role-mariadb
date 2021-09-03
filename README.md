@@ -21,7 +21,7 @@ bertvv.mariadb(https://github.com/bertvv/ansible-role-mariadb )のv2.2.0を元�
 使い方
 ------------
 
-##### Zipファイルをダウンロードし、 Ansibleプロジェクトのrolesディレクトリに解凍して利用します。
+##### このページのメニュー「Code / Download ZIP」からZipファイルをダウンロードし、 自分のAnsibleプロジェクトのrolesディレクトリに解凍して利用します。
 
 ```yml
 # main.yml
