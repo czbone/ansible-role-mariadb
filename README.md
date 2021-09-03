@@ -1,20 +1,44 @@
-# MariaDB—pAnsibleƒ[ƒ‹
+# MariaDBç”¨Ansibleãƒ­ãƒ¼ãƒ«
 
-MariaDBƒCƒ“ƒXƒg[ƒ‹—p‚ÌAnsibleƒ[ƒ‹‚Å‚·B
-bertvv.mariadb(https://github.com/bertvv/ansible-role-mariadb )‚Ìv2.2.0‚ğŒ³‚Éì¬‚µ‚Ä‚¢‚Ü‚·B
-å‚È‰ü—Ç“_‚ÍMariaDB‚Ì“ú–{ŒêŒü‚¯‚Ì‘Î‰‚Å‚·BƒT[ƒo‚Ì•¶šƒR[ƒh‚âCollation‚Ìw’è‚ª‚Å‚«‚Ü‚·B
+MariaDBã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ç”¨ã®Ansibleãƒ­ãƒ¼ãƒ«ã§ã™ã€‚
+bertvv.mariadb(https://github.com/bertvv/ansible-role-mariadb )ã®v2.2.0ã‚’å…ƒã«ä½œæˆã—ã¦ã„ã¾ã™ã€‚
+ä¸»ãªæ”¹è‰¯ç‚¹ã¯MariaDBã®æ—¥æœ¬èªå‘ã‘ã®å¯¾å¿œã§ã™ã€‚ã‚µãƒ¼ãƒã®æ–‡å­—ã‚³ãƒ¼ãƒ‰ã‚„Collationã®æŒ‡å®šãŒã§ãã¾ã™ã€‚
 
-## ‘Î‰OS
+## å¯¾å¿œOS
 
-- CentOS7
+- CentOS8, CentOS7
 
-## ƒ[ƒ‹İ’è’l
+## ãƒ­ãƒ¼ãƒ«è¨­å®šå€¤
 
-### Šî–{’è‹`’l
+### åŸºæœ¬å®šç¾©å€¤
 
-| ’è‹`–¼                         | ƒfƒtƒHƒ‹ƒg         | ˆÓ–¡                                                           |
+| å®šç¾©å                         | ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ         | æ„å‘³                                                           |
 | :---                           | :---               | :---                                                           |
-| mariadb_version             | '10.5'             | MariaDB‚Ìƒo[ƒWƒ‡ƒ“‚ğw’è‚µ‚Ü‚·B                              |
-| mariadb_character_set_server | 'utf8'             | ƒT[ƒo‚Ì•¶šƒR[ƒh‚ğw’è‚µ‚Ü‚·B                               |
-| mariadb_collation_server     | 'utf8_general_ci'  | ƒT[ƒo‚ÌCollation‚ğw’è‚µ‚Ü‚·B                                |
+| mariadb_version             | '10.5'             | MariaDBã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’æŒ‡å®šã—ã¾ã™ã€‚                              |
+| mariadb_character_set_server | 'utf8'             | ã‚µãƒ¼ãƒã®æ–‡å­—ã‚³ãƒ¼ãƒ‰ã‚’æŒ‡å®šã—ã¾ã™ã€‚                               |
+| mariadb_collation_server     | 'utf8_general_ci'  | ã‚µãƒ¼ãƒã®Collationã‚’æŒ‡å®šã—ã¾ã™ã€‚                                |
 
+ä½¿ã„æ–¹
+------------
+
+##### Zipãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã—ã€ Ansibleãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã®rolesãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã«è§£å‡ã—ã¦åˆ©ç”¨ã—ã¾ã™ã€‚
+
+```yml
+# main.yml
+roles:
+  - ansible-role-mariadb
+```
+
+##### ã¾ãŸã¯ã€Ansibleã®è¨­å®šã«æœ€æ–°ç‰ˆã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰å‡¦ç†ã‚’è¿½åŠ ã—ã¦åˆ©ç”¨ã—ã¾ã™ã€‚
+
+```yml
+# requirements.yml
+- src: https://github.com/czbone/ansible-role-mariadb
+  name: mariadb
+```
+
+```yml
+# main.yml
+roles:
+  - mariadb
+```
