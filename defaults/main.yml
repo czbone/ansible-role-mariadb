@@ -11,8 +11,6 @@ mariadb_version: '10.6'
 mariadb_configure_swappiness: true
 mariadb_swappiness: 0
 
-#mariadb_character_set_server: utf8
-#mariadb_collation_server: utf8_general_ci
 mariadb_character_set_server: utf8mb4
 mariadb_collation_server: utf8mb4_general_ci
 
