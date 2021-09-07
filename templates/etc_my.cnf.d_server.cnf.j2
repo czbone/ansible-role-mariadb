@@ -1,6 +1,11 @@
+# {{ ansible_managed }}
+#
 # MariaDB Server configuration
 #
-# {{ ansible_managed }}
+
+[mysqld]
+character-set-server            = {{ mariadb_character_set_server }}
+collation-server                = {{ mariadb_collation_server }}
 
 [mariadb]
 socket                          = {{ mariadb_socket }}
@@ -9,8 +14,8 @@ skip_name_resolve               = {{ mariadb_skip_name_resolve }}
 
 default_storage_engine          = InnoDB
 
-character_set_server            = {{ mariadb_character_set_server }}
-collation_server                = {{ mariadb_collation_server }}
+#character_set_server            = {{ mariadb_character_set_server }}
+#collation_server                = {{ mariadb_collation_server }}
 
 sysdate_is_now                  = {{ mariadb_sysdate_is_now }}
 log_warnings                    = {{ mariadb_log_warnings }}

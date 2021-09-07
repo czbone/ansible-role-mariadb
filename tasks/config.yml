@@ -8,6 +8,13 @@
   notify: restart mariadb
   tags: mariadb
 
+- name: Install mysql-clients config file
+  template:
+    src: etc_my.cnf.d_mysql-clients.cnf.j2
+    dest: "{{ mariadb_config_mysql_clients }}"
+  notify: restart mariadb
+  tags: mariadb
+
 - name: Install network config file
   template:
     src: etc_my.cnf.d_network.cnf.j2
