@@ -49,7 +49,7 @@ MariaDB [(none)]> show variables like 'collation_%';
 使い方
 ------------
 
-##### このページのメニュー「Code / Download ZIP」からZipファイルをダウンロードし、 自分のAnsibleプロジェクトのrolesディレクトリに解凍して利用します。
+このページのメニュー「Code / Download ZIP」からZipファイルをダウンロードし、 自分のAnsibleプロジェクトのrolesディレクトリに解凍して利用します。
 
 ```yml
 # main.yml
@@ -57,7 +57,7 @@ roles:
   - ansible-role-mariadb
 ```
 
-##### または、Ansibleの設定に最新版をダウンロード処理を追加して利用します。
+または、Ansibleの設定に最新版をダウンロード処理を追加して利用します。
 
 ```yml
 # requirements.yml
