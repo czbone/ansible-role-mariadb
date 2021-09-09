@@ -18,6 +18,34 @@ bertvv.mariadb(https://github.com/bertvv/ansible-role-mariadb )のv2.2.0を元�
 | mariadb_character_set_server | 'utf8mb4'             | サーバの文字コードを指定します。                               |
 | mariadb_collation_server     | 'utf8mb4_general_ci'  | サーバのCollationを指定します。                                |
 
+デフォルトの設定状況
+-----
+
+```
+MariaDB [(none)]> show variables like 'character_%';
++--------------------------+----------------------------+
+| Variable_name            | Value                      |
++--------------------------+----------------------------+
+| character_set_client     | utf8mb4                    |
+| character_set_connection | utf8mb4                    |
+| character_set_database   | utf8mb4                    |
+| character_set_filesystem | binary                     |
+| character_set_results    | utf8mb4                    |
+| character_set_server     | utf8mb4                    |
+| character_set_system     | utf8mb3                    |
+| character_sets_dir       | /usr/share/mysql/charsets/ |
++--------------------------+----------------------------+
+
+MariaDB [(none)]> show variables like 'collation_%';
++----------------------+--------------------+
+| Variable_name        | Value              |
++----------------------+--------------------+
+| collation_connection | utf8mb4_general_ci |
+| collation_database   | utf8mb4_general_ci |
+| collation_server     | utf8mb4_general_ci |
++----------------------+--------------------+
+```
+
 使い方
 ------------
 
