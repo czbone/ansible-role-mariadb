@@ -6,7 +6,7 @@ bertvv.mariadb(https://github.com/bertvv/ansible-role-mariadb )のv2.2.0を元�
 
 ## 対応OS
 
-- CentOS8, CentOS7
+- CentOS8, CentOS7, Rocky Linux v8
 
 ## ロール設定値
 
