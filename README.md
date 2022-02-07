@@ -6,7 +6,7 @@ bertvv.mariadb(https://github.com/bertvv/ansible-role-mariadb )のv2.2.0を元�
 
 ## 対応OS
 
-- CentOS Linux v7, v8
+- CentOS Linux v8
 - Rocky Linux v8
 - Alma Linux v8
 
