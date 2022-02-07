@@ -1,29 +1,32 @@
 # roles/mariadb/tasks/install.yml
 ---
 
-- name: Add official MariaDB yum repository
-  template:
-    src: etc_yum.repos.d_mariadb.repo.j2
-    dest: /etc/yum.repos.d/MariaDB.repo
-  tags: mariadb
-  when: ansible_os_family == 'RedHat'
+# - name: Add official MariaDB yum repository
+#   template:
+#     src: etc_yum.repos.d_mariadb.repo.j2
+#     dest: /etc/yum.repos.d/MariaDB.repo
+#   tags: mariadb
+#   when: ansible_os_family == 'RedHat'
 
-- name: Install MariaDB keys
-  apt_key:
-    keyserver: "{{ mariadb_apt_keyserver }}"
-    id: "{{ mariadb_apt_keyid }}"
-    state: present
-  when: ansible_os_family == 'Debian'
+# - name: Install MariaDB keys
+#   apt_key:
+#     keyserver: "{{ mariadb_apt_keyserver }}"
+#     id: "{{ mariadb_apt_keyid }}"
+#     state: present
+#   when: ansible_os_family == 'Debian'
 
-- name: Add official MariaDB apt repository
-  apt_repository:
-    repo: "{{ item }}"
-    state: present
-    update_cache: yes
-    filename: mariadb
-  register: mariadb_install_packages
-  with_items: '{{mariadb_apt_repositories}}'
-  when: ansible_os_family == 'Debian'
+# - name: Add official MariaDB apt repository
+#   apt_repository:
+#     repo: "{{ item }}"
+#     state: present
+#     update_cache: yes
+#     filename: mariadb
+#   register: mariadb_install_packages
+#   with_items: '{{mariadb_apt_repositories}}'
+#   when: ansible_os_family == 'Debian'
+
+- name: Add official MariaDB repository
+  shell: curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash -s -- --mariadb-server-version=10.6 --skip-maxscale --skip-tools
 
 - name: Install packages
   package:
