@@ -7,36 +7,35 @@
 #     dest: /etc/yum.repos.d/MariaDB.repo
 #   tags: mariadb
 #   when: ansible_os_family == 'RedHat'
-
-# - name: Install MariaDB keys
-#   apt_key:
-#     keyserver: "{{ mariadb_apt_keyserver }}"
-#     id: "{{ mariadb_apt_keyid }}"
-#     state: present
-#   when: ansible_os_family == 'Debian'
-
-# - name: Add official MariaDB apt repository
-#   apt_repository:
-#     repo: "{{ item }}"
-#     state: present
-#     update_cache: yes
-#     filename: mariadb
-#   register: mariadb_install_packages
-#   with_items: '{{mariadb_apt_repositories}}'
-#   when: ansible_os_family == 'Debian'
-
-# - name: Add official MariaDB repository
-#   shell: curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | bash -s -- --mariadb-server-version={{ mariadb_version }} --skip-maxscale --skip-tools
 - name: Generate official MariaDB repository
   uri:
     url: https://downloads.mariadb.com/MariaDB/mariadb_repo_setup
     return_content: yes
   register: repo_installer
+  when: ansible_os_family == 'RedHat'
 
 - name: Add official MariaDB repository
   shell:
     cmd: bash -s -- --mariadb-server-version={{ mariadb_version }} --skip-maxscale --skip-tools
     stdin: "{{ repo_installer.content }}"
+  when: ansible_os_family == 'RedHat'
+
+- name: Install MariaDB keys
+  apt_key:
+    keyserver: "{{ mariadb_apt_keyserver }}"
+    id: "{{ mariadb_apt_keyid }}"
+    state: present
+  when: ansible_os_family == 'Debian'
+
+- name: Add official MariaDB apt repository
+  apt_repository:
+    repo: "{{ item }}"
+    state: present
+    update_cache: yes
+    filename: mariadb
+  register: mariadb_install_packages
+  with_items: '{{mariadb_apt_repositories}}'
+  when: ansible_os_family == 'Debian'
 
 - name: Install packages
   package:
