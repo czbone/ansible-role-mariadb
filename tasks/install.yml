@@ -25,9 +25,18 @@
 #   with_items: '{{mariadb_apt_repositories}}'
 #   when: ansible_os_family == 'Debian'
 
+# - name: Add official MariaDB repository
+#   shell: curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | bash -s -- --mariadb-server-version={{ mariadb_version }} --skip-maxscale --skip-tools
+- name: Generate official MariaDB repository
+  uri:
+    url: https://downloads.mariadb.com/MariaDB/mariadb_repo_setup
+    return_content: yes
+  register: repo_installer
+
 - name: Add official MariaDB repository
-  #shell: curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash -s -- --mariadb-server-version={{ mariadb_version }} --skip-maxscale --skip-tools
-  shell: curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | bash -s -- --mariadb-server-version={{ mariadb_version }} --skip-maxscale --skip-tools
+  shell:
+    cmd: bash -s -- --mariadb-server-version={{ mariadb_version }} --skip-maxscale --skip-tools
+    stdin: "{{ repo_installer.content }}"
 
 - name: Install packages
   package:
