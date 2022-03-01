@@ -16,7 +16,7 @@ bertvv.mariadb(https://github.com/bertvv/ansible-role-mariadb )のv2.2.0を元�
 
 | 定義名                         | デフォルト         | 意味                                                           |
 | :---                           | :---               | :---                                                           |
-| mariadb_version             | '10.6'             | MariaDBのバージョンを指定します。                              |
+| mariadb_version             | '10.7'             | MariaDBのバージョンを指定します。                              |
 | mariadb_character_set_server | 'utf8mb4'             | サーバの文字コードを指定します。                               |
 | mariadb_collation_server     | 'utf8mb4_general_ci'  | サーバのCollationを指定します。                                |
 
