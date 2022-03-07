@@ -59,12 +59,12 @@ MariaDB [(none)]> show variables like 'collation_%';
 
 ```yml
 # requirements.yml
-roles:
-  - src: https://github.com/czbone/ansible-role-mariadb
-    name: mariadb
 collections:
   - ansible.posix
   - community.mysql
+roles:
+  - src: https://github.com/czbone/ansible-role-mariadb
+    name: mariadb
 ```
 
 ```yml
