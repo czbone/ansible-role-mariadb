@@ -6,9 +6,15 @@ bertvv.mariadb(https://github.com/bertvv/ansible-role-mariadb )のv2.2.0を元�
 
 ## 対応OS
 
-- CentOS Linux v8
-- Rocky Linux v8
-- Alma Linux v8
+- CentOS Stream 8
+
+## Ansible依存モジュール
+
+Ansible v2.12以降に対応しています。
+以下のコレクションを使用しています。
+
+- ansible.posix
+- community.mysql
 
 ## ロール設定値
 
@@ -51,24 +57,21 @@ MariaDB [(none)]> show variables like 'collation_%';
 使い方
 ------------
 
-このページのメニュー「Code / Download ZIP」からZipファイルをダウンロードし、 自分のAnsibleプロジェクトのrolesディレクトリに解凍して利用します。
-
-```yml
-# main.yml
-roles:
-  - ansible-role-mariadb
-```
-
-または、Ansibleの設定に最新版をダウンロード処理を追加して利用します。
-
 ```yml
 # requirements.yml
-- src: https://github.com/czbone/ansible-role-mariadb
-  name: mariadb
+roles:
+  - src: https://github.com/czbone/ansible-role-mariadb
+    name: mariadb
+collections:
+  - ansible.posix
+  - community.mysql
 ```
 
 ```yml
 # main.yml
+collections:
+  - ansible.posix
+  - community.mysql
 roles:
   - mariadb
 ```
