@@ -17,5 +17,6 @@ galaxy_info:
   galaxy_tags:
     - database
     - sql
-dependencies:
+dependencies: []
+collections:
   - ansible.posix
